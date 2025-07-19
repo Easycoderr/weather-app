@@ -40,11 +40,14 @@ h1 {
   display: flex;
   gap: 10px;
   margin-top: 20px;
+  width: 100%;
+  padding: 0 10px;
 }
 
 .search-container input {
   flex: 1;
-  padding: 15px;
+  min-width: 0;
+  padding: 12px 15px;
   border: none;
   border-radius: 50px;
   font-size: 1rem;
@@ -64,6 +67,9 @@ h1 {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  min-width: 50px;
+  padding: 0 15px;
+  white-space: nowrap;
 }
 
 .search-container button:hover {
@@ -260,7 +266,21 @@ h1 {
     padding: 12px;
   }
 }
+@media (max-width: 480px) {
+  .search-container {
+    flex-direction: row;
+    gap: 8px;
+  }
 
+  .search-container input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .search-container button {
+    padding: 0 12px;
+  }
+}
 @media (max-width: 400px) {
   .weather-main {
     flex-direction: column;
